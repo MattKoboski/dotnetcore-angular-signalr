@@ -22,7 +22,7 @@ Demo mechanizmu notyfikacji SignalR przy użyciu Angulara 6 i .NET Core 2.1
 6. Naciśnij *Execute*
 7. Zobacz wiadomość w aplikacji Angular
 
-<!-- ![Swagger UI]() -->
+![Swagger UI](https://github.com/MattKoboski/dotnetcore-angular-signalr/blob/master/docs/swagger.PNG)
 
 ## Typy wiadomości
 |typ | kolor wiadomości |
