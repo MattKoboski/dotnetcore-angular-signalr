@@ -4,6 +4,5 @@ namespace App.Hub
 {
     public class NotifyHub : Hub<IHubClient>
     {
-        
     }
 }

@@ -13,7 +13,8 @@ namespace App.Hub.Controllers
             _hubContext = hubContext;
         }
 
-        public IActionResult Post([FromForm]Message message)
+        [HttpPost]
+        public IActionResult Post([FromBody]Message message)
         {
             _hubContext.Clients.All.BroadcastMessage(message.Type, message.Payload);
             return Accepted();

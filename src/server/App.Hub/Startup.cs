@@ -10,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace App.Hub
 {
@@ -27,14 +28,20 @@ namespace App.Hub
         {
             services.AddCors(options =>
             {
-                options.AddPolicy("MyCorsPolicy",
-                    builder =>
-                    {
-                        builder.AllowAnyOrigin().AllowAnyHeader();
-                        builder.AllowAnyOrigin().AllowAnyMethod();
-                    });
+                options.AddPolicy("MyCorsPolicy", builder =>
+                {
+                    builder
+                    .AllowAnyMethod()
+                    .AllowAnyHeader()
+                    .AllowCredentials()
+                    .AllowAnyOrigin();
+                });
             });
             services.AddSignalR();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Angular 6 + NET Core 2.1 + SignalR", Version = "0.1" });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -49,7 +56,11 @@ namespace App.Hub
             {
                 app.UseHsts();
             }
-
+            app.UseSwagger();
+                app.UseSwaggerUI(c => {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.1 + SignalR v0.1");
+                    c.RoutePrefix = string.Empty;
+                });
             app.UseCors("MyCorsPolicy");
             app.UseSignalR(routes => routes.MapHub<NotifyHub>("/notifications"));
             app.UseHttpsRedirection();
