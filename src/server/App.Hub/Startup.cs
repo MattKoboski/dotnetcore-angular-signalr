@@ -25,6 +25,16 @@ namespace App.Hub
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("MyCorsPolicy",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin().AllowAnyHeader();
+                        builder.AllowAnyOrigin().AllowAnyMethod();
+                    });
+            });
+            services.AddSignalR();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 
@@ -40,6 +50,8 @@ namespace App.Hub
                 app.UseHsts();
             }
 
+            app.UseCors("MyCorsPolicy");
+            app.UseSignalR(routes => routes.MapHub<NotifyHub>("/notifications"));
             app.UseHttpsRedirection();
             app.UseMvc();
         }
