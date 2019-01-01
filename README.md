@@ -1,5 +1,5 @@
 # Wprowadzenie
-Demo mechanizmu notyfikacji SignalR przy użyciu Angulara 6 i .NET Core 2.1
+Demo mechanizmu notyfikacji SignalR przy użyciu Angulara 6 i .NET Core 2.2
 
 # Instrukcja instalacji
 ## Przed uruchomieniem:
