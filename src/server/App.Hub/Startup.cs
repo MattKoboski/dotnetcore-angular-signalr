@@ -40,9 +40,9 @@ namespace App.Hub
             services.AddSignalR();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new Info { Title = "Angular 6 + NET Core 2.1 + SignalR", Version = "0.1" });
+                c.SwaggerDoc("v1", new Info { Title = "Angular 6 + NET Core 2.2 + SignalR", Version = "0.1" });
             });
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -58,7 +58,7 @@ namespace App.Hub
             }
             app.UseSwagger();
                 app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.1 + SignalR v0.1");
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.2 + SignalR v0.1");
                     c.RoutePrefix = string.Empty;
                 });
             app.UseCors("MyCorsPolicy");
