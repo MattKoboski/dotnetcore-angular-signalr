@@ -3,7 +3,7 @@ Demo mechanizmu notyfikacji SignalR przy użyciu Angulara 6 i .NET Core 2.1
 
 # Instrukcja instalacji
 ## Przed uruchomieniem:
--  instalacja sdk-2.1.302 -> https://www.microsoft.com/net/download/dotnet-core/sdk-2.1.302
+-  instalacja sdk-2.2.101 -> https://www.microsoft.com/net/download/dotnet-core/sdk-2.2.101
 -  instalacja node -> https://nodejs.org/en/
 ## W folderze src/server/App.Hub:
 - dotnet restore

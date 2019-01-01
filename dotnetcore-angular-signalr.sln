@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26124.0
+MinimumVisualStudioVersion = 15.0.26124.0
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{D1BA1191-26AA-4A91-BF3F-8BB43F5AE138}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "server", "server", "{A7445F31-3B92-41DC-A12E-F2188F392188}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "App.Hub", "src\server\App.Hub\App.Hub.csproj", "{A6936DF2-03F8-4336-8E3C-A4B847A54B51}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|x64.Build.0 = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Debug|x86.Build.0 = Debug|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|x64.ActiveCfg = Release|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|x64.Build.0 = Release|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|x86.ActiveCfg = Release|Any CPU
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{A7445F31-3B92-41DC-A12E-F2188F392188} = {D1BA1191-26AA-4A91-BF3F-8BB43F5AE138}
+		{A6936DF2-03F8-4336-8E3C-A4B847A54B51} = {A7445F31-3B92-41DC-A12E-F2188F392188}
+	EndGlobalSection
+EndGlobal
