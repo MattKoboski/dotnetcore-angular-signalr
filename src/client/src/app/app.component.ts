@@ -4,6 +4,8 @@ import { HubConnection } from '@aspnet/signalr';
 import { Message } from 'primeng/api';
 import * as signalR from '@aspnet/signalr';
 
+import webNotification from 'simple-web-notification'
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -25,5 +27,13 @@ export class AppComponent implements OnInit {
     this.connection.on('BroadcastMessage', (type: string, payload: string) => {
       this.messages.push({ severity: type, summary: payload });
     });
+
+    // this.connection.on('BroadcastMessage', (type: string, payload: string) => {
+    //   webNotification.showNotification(type, {
+    //     body: payload,
+    //     onClick: () => {console.log("clicked")},
+    //     autoClose: 7000
+    //   });
+    // });
   }
 }
