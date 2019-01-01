@@ -16,7 +16,7 @@ export class AppComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.connection = new signalR.HubConnectionBuilder().withUrl('https://localhost:5001/notifications').build();
+    this.connection = new signalR.HubConnectionBuilder().withUrl('https://signalr-demo-dotnetgroup.azurewebsites.net/notifications').build();
     this.connection
       .start()
       .then(() => console.log('Connection started!'))

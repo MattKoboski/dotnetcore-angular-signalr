@@ -1,15 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
 using Swashbuckle.AspNetCore.Swagger;
 
 namespace App.Hub
@@ -31,10 +24,10 @@ namespace App.Hub
                 options.AddPolicy("MyCorsPolicy", builder =>
                 {
                     builder
+                    .WithOrigins("http://localhost:4200")
                     .AllowAnyMethod()
                     .AllowAnyHeader()
-                    .AllowCredentials()
-                    .AllowAnyOrigin();
+                    .AllowCredentials();
                 });
             });
             services.AddSignalR();
@@ -54,7 +47,7 @@ namespace App.Hub
             }
             else
             {
-                app.UseHsts();
+                //app.UseHsts();
             }
             app.UseSwagger();
                 app.UseSwaggerUI(c => {
