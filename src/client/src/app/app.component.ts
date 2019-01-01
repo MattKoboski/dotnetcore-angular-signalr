@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
     this.connection
       .start()
       .then(() => console.log('Connection started!'))
-      .catch(err => console.log('Error while establishing connection :('));
+      .catch(() => console.log('Error while establishing connection :('));
 
     this.connection.on('BroadcastMessage', (type: string, payload: string) => {
       this.messages.push({ severity: type, summary: payload });
