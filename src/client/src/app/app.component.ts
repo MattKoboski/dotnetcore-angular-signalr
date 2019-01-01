@@ -11,7 +11,7 @@ import * as signalR from '@aspnet/signalr';
 })
 export class AppComponent implements OnInit {
   private connection: HubConnection;
-  messages: Message[] = [];
+  private messages: Message[] = [];
 
   constructor() { }
 
