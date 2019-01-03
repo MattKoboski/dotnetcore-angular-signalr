@@ -15,23 +15,23 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.connection = new HubConnectionBuilder()
-      .withUrl('https://signalr-demo-dotnetgroup.azurewebsites.net/notifications')
+      .withUrl('https://localhost:5001/notifications')
       .build();
     this.connection
       .start()
       .then(() => console.log('Connection started!'))
       .catch(() => console.log('Error while establishing connection :('));
 
-    this.connection.on('BroadcastMessage', (type: string, payload: string) => {
-      this.messages.push({ severity: type, summary: payload });
-    });
-
     // this.connection.on('BroadcastMessage', (type: string, payload: string) => {
-    //   webNotification.showNotification(type, {
-    //     body: payload,
-    //     onClick: () => { console.log('clicked!'); },
-    //     autoClose: 7000
-    //   });
+    //   this.messages.push({ severity: type, summary: payload });
     // });
+
+    this.connection.on('BroadcastMessage', (type: string, payload: string) => {
+      webNotification.showNotification(type, {
+        body: payload,
+        onClick: () => { console.log('clicked!'); },
+        autoClose: 7000
+      });
+    });
   }
 }

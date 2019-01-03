@@ -50,10 +50,10 @@ namespace App.Hub
                 //app.UseHsts();
             }
             app.UseSwagger();
-                app.UseSwaggerUI(c => {
-                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.2 + SignalR v0.1");
-                    c.RoutePrefix = string.Empty;
-                });
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Angular 6 + NET Core 2.2 + SignalR v0.1");
+                c.RoutePrefix = string.Empty;
+            });
             app.UseCors("MyCorsPolicy");
             app.UseSignalR(routes => routes.MapHub<NotifyHub>("/notifications"));
             app.UseHttpsRedirection();
